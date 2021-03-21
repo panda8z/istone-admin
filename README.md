@@ -6,6 +6,18 @@ Golang 后端管理系统，工具链，项目规范。
 
 要做一个，后端项目脚手架。
 
+准备给后续的项目强有力的支持。
+
+定义 Golang 后端开发工具链，
+定义项目规范，代码规范，协作规范，issue规范，PR规范。
+跟踪最佳实践。
+
+## 不要做什么？
+
+不要特意适配Windows，如果有这方面的贡献，视情况再说。
+不准备大规模社区化，终究是个小众产品。
+不要做过于细节的功能管控，应该交由下游服务实现。
+
 ## 主要功能是什么？
 
 后端脚手架，应该是结构简单，高效，便捷的工具。
@@ -45,6 +57,7 @@ Golang 后端管理系统，工具链，项目规范。
 #### 配置文件
 
 使用 `go get -u github.com/spf13/viper` 解决，配置文件的读取问题。
+viper的文件更改监听使用了 ·github.com/fsnotify/fsnotify·。
 
 #### 命令行
 
@@ -53,7 +66,8 @@ Golang 后端管理系统，工具链，项目规范。
 #### 数据库
 
 接下来，选择要支持的数据库，这里选择Mysql。
-这里选择常用的对象关系映射库 [GORM](https://gorm.io/zh_CN/) 作为数据库的驱动 `go get -u gorm.io/driver/mysql` 加 `go get -u gorm.io/gorm`。
+这里选择常用的对象关系映射库 [GORM](https://gorm.io/zh_CN/) 
+作为数据库的驱动 `go get -u gorm.io/driver/mysql` 加 `go get -u gorm.io/gorm`。
 
 #### 认证和鉴权
 
@@ -73,7 +87,8 @@ Golang 后端管理系统，工具链，项目规范。
 
 #### 日志
 
-这里使用大团队杰作 来自uber的zap：`go get -u go.uber.org/zap`
+这里使用大团队杰作 来自uber的zap：`go get -u go.uber.org/zap`。
+日志文件分割用到了 ·github.com/lestrrat-go/file-rotatelogs·
 
 #### API文档
 
@@ -83,3 +98,9 @@ Golang 后端管理系统，工具链，项目规范。
 
 这里可能先选择七牛云或者阿里云的云存储服务。
 他们的库地址分别为：·github.com/qiniu/api.v7/v7· 和 ·github.com/aliyun/aliyun-oss-go-sdk·
+
+
+#### UUID
+
+目前用户信息里需要一个UUID数据，这个UUID生成器我们使用 ·github.com/satori/go.uuid·。
+后续可能有更好的选择。

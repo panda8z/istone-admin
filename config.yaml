@@ -1,0 +1,30 @@
+
+mysql:
+  config: 'charset=utf8mb4&parseTime=True&loc=Local&timeout=1000ms'
+  dbname: 'istone'
+  logMode: true
+  logZap: 'zap'
+  maxIdleConn: 8
+  maxOpenConn: 100
+  password: '123456'
+  url: '127.0.0.1:3306'
+  user: 'root'
+
+jwt:
+  bufferTime: 86400
+  expiresTime: 604800
+  signKey: 'istone-admin-jwt-sign-key'
+
+zap:
+  director: 'log'
+  encodeLevel: 'LowercaseColorLevelEncoder'
+  format: 'console'
+  level: 'info'
+  linkName: 'latest_log'
+  logInConsole: true
+  prefix: '[ISTONE-ADMIN]'
+  showLine: true
+  stacktraceKey: 'istone-admin-zap-stacktrace'
+
+system:
+  dbType: 'mysql' # 后续可以支持其他数据库
